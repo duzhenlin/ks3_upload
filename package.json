@@ -35,6 +35,7 @@
         "js-cookie": "^2.2.0",
         "node-sass": "^4.13.1",
         "plupload": "^2.3.6",
+        "shelljs": "^0.8.3",
         "simplemde": "^1.11.2",
         "sortablejs": "^1.7.0",
         "vue": "^2.5.10",
