@@ -14260,7 +14260,7 @@ vue__WEBPACK_IMPORTED_MODULE_7___default.a.prototype.$ks3 = _assets_ks3_src_ks3j
         onFileUploadedCallBack: function onFileUploadedCallBack(uploader, obj) {
           $(".file-".concat(obj.id, " .progress")).css("background", "#f2f2f2");
           $(".file-".concat(obj.id, " .file-status")).html("上传成功");
-          my.$emit("uploadsucceed", obj);
+          my.$emit("uploadsucceed", obj, my.ks3UploadUrl());
         },
         onFilesAddedCallBack: function onFilesAddedCallBack(uploader, objArray) {
           // my.fileList = objArray;
@@ -14452,12 +14452,12 @@ if (typeof window !== 'undefined') {
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
 var es6_function_name = __webpack_require__("7f7f");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"889799a4-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/ks3_upload/ks3_upload.vue?vue&type=template&id=97bd058a&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"889799a4-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/ks3_upload/ks3_upload.vue?vue&type=template&id=b091f6de&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('div',{attrs:{"id":"container"}},[_c('Button',{attrs:{"id":"browse","type":"primary"}},[_vm._v("选择文件")]),_c('Button',{attrs:{"id":"start-upload","type":"primary"},on:{"click":_vm.startUpload}},[_vm._v("开始上传")])],1),_c('div',{staticClass:"file-panel"},[_c('h2',[_vm._v("文件列表")]),_c('div',{staticClass:"file-list"},[_vm._l((_vm.fileList),function(file){return _c('ul',{key:file.id,staticClass:"file-item",class:("file-" + (file.id))},[_c('li',{staticClass:"file-type",attrs:{"icon":_vm.fileCategory(file.name)}}),_c('li',{staticClass:"file-name"},[_vm._v(_vm._s(_vm.Cutsubstr(file.oldname,30)))]),_c('li',{staticClass:"file-size"},[_vm._v(_vm._s(_vm.fileSize(file.origSize)))]),_c('li',{staticClass:"file-status"},[_vm._v("等待上传...")]),_c('li',{staticClass:"file-operate"},[_c('a',{attrs:{"title":"移除"},on:{"click":function($event){return _vm.remove(file)}}},[_c('Icon',{attrs:{"type":"md-close"}})],1)]),_c('li',{staticClass:"progress"})])}),(!_vm.fileList.length)?_c('div',{staticClass:"no-file"},[_c('i',{staticClass:"iconfont icon-empty-file"}),_vm._v(" 暂无待上传文件\n      ")]):_vm._e()],2)])])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/ks3_upload/ks3_upload.vue?vue&type=template&id=97bd058a&
+// CONCATENATED MODULE: ./src/components/ks3_upload/ks3_upload.vue?vue&type=template&id=b091f6de&
 
 // EXTERNAL MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/ks3_upload/ks3_upload.vue?vue&type=script&lang=js&
 var ks3_uploadvue_type_script_lang_js_ = __webpack_require__("e211");

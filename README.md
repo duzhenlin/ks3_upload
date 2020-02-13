@@ -1,4 +1,4 @@
-#ks3_upload
+# ks3_upload
 ksyun  ks3 for JavaScript
 金山云上传 vue版本
 
@@ -42,4 +42,5 @@ region            | 可用区                        | String                | B
 event             | descripton                  | arguments
 ------------------|-----------------------------|------------------------------
 remove            | 当文件被删除                 | file
-uploadError       | 文件上传错误时候             | file
+uploadError       | 文件上传错误时候              | file
+uploadsucceed     | 成功时返回                   | file ，baseUrl

@@ -227,7 +227,7 @@ export default {
         onFileUploadedCallBack: function(uploader, obj) {
           $(`.file-${obj.id} .progress`).css("background", "#f2f2f2");
           $(`.file-${obj.id} .file-status`).html("上传成功");
-          my.$emit("uploadsucceed", obj);
+          my.$emit("uploadsucceed", obj, my.ks3UploadUrl());
         },
         onFilesAddedCallBack: function(uploader, objArray) {
           // my.fileList = objArray;
