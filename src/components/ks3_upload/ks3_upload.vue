@@ -35,7 +35,7 @@ import Vue from "vue";
 import "./style.scss";
 Vue.prototype.$ks3 = Ks3;
 export default {
-  name: "vKs3Upload",
+  name: "Ks3Upload",
   components: {},
   props: {
     Signature: {
