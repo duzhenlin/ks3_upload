@@ -29,7 +29,11 @@
   </div>
 </template>
 <script>
+import Ks3 from "../../assets/ks3/src/ks3jssdk";
+import "../../assets/ks3/src/zh_CN";
+import Vue from "vue";
 import "./style.scss";
+Vue.prototype.$ks3 = Ks3;
 export default {
   name: "vKs3Upload",
   components: {},
