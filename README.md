@@ -8,8 +8,6 @@ ks3_upload是一个基于Vue,iview封装金山云对象存储上传模块。
 
 ## Install
 ```
-npm install jquery
-npm install plupload
 npm install ks3_upload 
 或者
 npm install ks3_upload  --registry=https://registry.npmjs.org/
