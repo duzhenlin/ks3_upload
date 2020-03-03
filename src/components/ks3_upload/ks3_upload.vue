@@ -38,6 +38,10 @@ export default {
   name: "Ks3Upload",
   components: {},
   props: {
+    module: {
+      type: String,
+      default: null
+    },
     Signature: {
       type: Object,
       default: () => {}
@@ -61,14 +65,11 @@ export default {
     prevent_duplicates: {
       type: Boolean,
       default: true
-    },
-    region: {
-      type: String,
-      default: "BEIJING"
     }
   },
   data() {
     return {
+      region: "BEIJING",
       fileList: [],
       getMd5: {},
       uploader: null,
@@ -84,10 +85,7 @@ export default {
     };
   },
   beforeCreate() {},
-  created() {
-    // console.log(this.$ks3);
-    // console.log(this.$ks3.config);
-  },
+  created() {},
   mounted() {
     this.$nextTick(() => {
       if (!this.Signature.bucket) throw new Error("请配置bucket!");
@@ -132,7 +130,48 @@ export default {
       if (build.length < str.length) build += "...";
       return build;
     },
-
+    fileType(filename) {
+      let index = filename.lastIndexOf(".");
+      let ext = filename.substr(index + 1);
+      let type = "";
+      const typeMap = {
+        image: ["gif", "jpg", "jpeg", "png", "bmp", "webp"],
+        media: [
+          "mp4",
+          "m3u8",
+          "rmvb",
+          "avi",
+          "swf",
+          "3gp",
+          "mkv",
+          "flv",
+          "wav",
+          "mp3"
+        ],
+        text: [
+          "doc",
+          "txt",
+          "docx",
+          "pages",
+          "epub",
+          "pdf",
+          "numbers",
+          "csv",
+          "xls",
+          "xlsx",
+          "keynote",
+          "ppt",
+          "pptx"
+        ]
+      };
+      Object.keys(typeMap).forEach(_type => {
+        const extensions = typeMap[_type];
+        if (extensions.indexOf(ext) > -1) {
+          type = _type;
+        }
+      });
+      return type ? type : "other";
+    },
     fileCategory(filename) {
       let index = filename.lastIndexOf(".");
       let ext = filename.substr(index + 1);
@@ -172,10 +211,13 @@ export default {
       } else {
         protocol = "http";
       }
+
       return (
         protocol +
         "://" +
-        this.$ks3.ENDPOINT[this.region] +
+        this.$ks3.ENDPOINT[
+          this.Signature.region ? this.Signature.region : this.region
+        ] +
         "/" +
         this.Signature.bucket
       );
@@ -192,11 +234,33 @@ export default {
       }
       return pwd;
     },
-    upload_subdir() {
+    upload_subdir(obj) {
+      let moduleName = this.module ? this.module + "/" : "";
       let date = new Date();
       return (
-        date.getFullYear() + "" + date.getMonth() + "/" + date.getDate() + "/"
+        this.fileType(obj.name) +
+        "/" +
+        moduleName +
+        date.getFullYear() +
+        this.getMonth(date) +
+        "/" +
+        this.getDate(date) +
+        "/"
       );
+    },
+    getMonth(date) {
+      let m = date.getMonth() + 1;
+      if (m < 10) {
+        m = "0" + m;
+      }
+      return m;
+    },
+    getDate(date) {
+      let m = date.getDate();
+      if (m < 10) {
+        m = "0" + m;
+      }
+      return m;
     },
     newFilenName(filename) {
       let index = filename.lastIndexOf(".");
@@ -214,8 +278,6 @@ export default {
         acl: "public-read",
         uploadDomain: this.ks3UploadUrl(),
         autoStart: false,
-        "x-kss-meta-custom-param1": "Hello",
-        "x-kss-newfilename-in-body": true,
         "Cache-Control": "max-age=600", //设置缓存多少秒后过期
         // Expires: new Date(getExpires(600) * 1000), //设置缓存过期时间
         "Content-Disposition": "attachment;filename=", // 触发浏览器下载文件
@@ -227,7 +289,15 @@ export default {
         onFileUploadedCallBack: function(uploader, obj) {
           $(`.file-${obj.id} .progress`).css("background", "#f2f2f2");
           $(`.file-${obj.id} .file-status`).html("上传成功");
-          my.$emit("uploadsucceed", obj, my.ks3UploadUrl());
+          if (my.Signature.domain) {
+            my.$emit(
+              "uploadsucceed",
+              obj,
+              my.Signature.domain + "/" + obj.name
+            );
+          } else {
+            my.$emit("uploadsucceed", obj, my.ks3UploadUrl() + "/" + obj.name);
+          }
         },
         onFilesAddedCallBack: function(uploader, objArray) {
           // my.fileList = objArray;
@@ -242,14 +312,13 @@ export default {
         onBeforeUploadCallBack: function(uploader, obj) {
           //改名上传文件
           obj.oldname = obj.name;
-          let newObjectKey = my.upload_subdir() + my.newFilenName(obj.name);
+          let newObjectKey = my.upload_subdir(obj) + my.newFilenName(obj.name);
           uploader.settings.multipart_params["key"] = newObjectKey;
           obj.name = newObjectKey;
         },
         onErrorCallBack: function(uploader, errObject) {
           if (errObject.status === 413 || errObject.status === 415) {
             var responseXML = this.$ks3.parseStringToXML(errObject.response);
-            // alert(Ks3.xmlToJson(responseXML)["Error"]["Message"]);
             my.$Notice.error({
               title: this.$ks3.xmlToJson(responseXML)["Error"]["Message"]
             });

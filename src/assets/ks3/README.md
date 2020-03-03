@@ -24,8 +24,8 @@
 
 
 ```
-	<script type="text/javascript" src="js/plupload.full.min.js"></script>
-	<script type="text/javascript" src="js/ks3jssdk.min.js"></script>
+|<script type="text/javascript" src="js/plupload.full.min.js"></script>
+|<script type="text/javascript" src="js/ks3jssdk.min.js"></script>
 ```
 3、运行
 
@@ -53,12 +53,12 @@ document.getElementById('start-upload').onclick = function (){
 ##### 参数 #####
 - `ks3PostOptions`, 金山云存储上传需要的配置参数：
 
-	- `KSSAccessKeyId`: AccessKey
+|- `KSSAccessKeyId`: AccessKey
 
-	- `policy`: 请求中用于描述获准行为的安全策略。没有安全策略的请求被认为是匿名请求，只能访问公共可写空间。详见：[Policy、Signature构建方法](http://ks3.ksyun.com/doc/api/object/post_policy.html)
-	
-	- `signature`: 根据Access Key Secret和policy计算的签名信息，KS3验证该签名信息从而验证该Post请求的合法性。详见：[Policy、Signature构建方法](http://ks3.ksyun.com/doc/api/object/post_policy.html)
-	
+|- `policy`: 请求中用于描述获准行为的安全策略。没有安全策略的请求被认为是匿名请求，只能访问公共可写空间。详见：[Policy、Signature构建方法](http://ks3.ksyun.com/doc/api/object/post_policy.html)
+|
+|- `signature`: 根据Access Key Secret和policy计算的签名信息，KS3验证该签名信息从而验证该Post请求的合法性。详见：[Policy、Signature构建方法](http://ks3.ksyun.com/doc/api/object/post_policy.html)
+|
     - `bucket_name`: 上传的空间名
     
     - `key`: 被上传键值的名称。如果用户想要使用文件名作为键值，可以使用${filename} 变量。例如：如果用户想要上传文件local.jpg，需要指明specify /user/betty/${filename}，那么键值就会为/user/betty/local.jpg。
@@ -69,8 +69,8 @@ document.getElementById('start-upload').onclick = function (){
             
     - `autoStart`: 是否在文件添加完毕后自动上传，默认为false
     
-  	- `onInitCallBack`: function(){}, //上传初始化时调用的回调函数
-  	
+  |- `onInitCallBack`: function(){}, //上传初始化时调用的回调函数
+  |
     - `onErrorCallBack`: function(){}, //发生错误时调用的回调函数
     
     - `onFilesAddedCallBack`: function(){}, //文件添加到浏览器时调用的回调函数
@@ -86,18 +86,18 @@ document.getElementById('start-upload').onclick = function (){
     - `onUploadCompleteCallBack`: function(){} //所有上传完成时调用的回调函数
 
 - `pluploadOptions`, plupload上传插件需要的配置参数：
-	- `runtimes`: 默认值为："html5,flash,silverlight,html4"，上传模式，上传器将会依次采用能够工作的模式运行
-	
-	- `browse_button`: 默认为'browse', 触发对话框的DOM元素自身或者其ID
-	
-	- `url`: 上传地址，默认为 ks3PostOptions.uploadDomain
-	
-	- `drop_element`: 触发拖动上传的元素或者其ID, 默认为undefined
+|- `runtimes`: 默认值为："html5,flash,silverlight,html4"，上传模式，上传器将会依次采用能够工作的模式运行
+|
+|- `browse_button`: 默认为'browse', 触发对话框的DOM元素自身或者其ID
+|
+|- `url`: 上传地址，默认为 ks3PostOptions.uploadDomain
+|
+|- `drop_element`: 触发拖动上传的元素或者其ID, 默认为undefined
         
-	- `flash_swf_url` : 默认为'js/Moxie.swf', Flash组件的相对路径，请根据该组件在实际项目中的位置修改
+|- `flash_swf_url` : 默认为'js/Moxie.swf', Flash组件的相对路径，请根据该组件在实际项目中的位置修改
         
-	- `silverlight_xap_url` : 默认为'js/Moxie.xap', Silverlight组件的相对路径，同flash_swf_url;
-	
+|- `silverlight_xap_url` : 默认为'js/Moxie.xap', Silverlight组件的相对路径，同flash_swf_url;
+|
 #### 属性 ####
 
 uploader：返回一个 plupload 插件的 Uploader 对象。 欲查看更多关于plupload的信息，参见：[http://www.plupload.com/docs/](http://www.plupload.com/docs/)
@@ -108,31 +108,31 @@ uploader：返回一个 plupload 插件的 Uploader 对象。 欲查看更多关
 
 答：
 
-	{
-	    "expiration": "2015-12-02T10:57:30.000Z",
-	    "conditions": [{
-	            "acl": "public-read"
-	        }, {
-	            "bucket": "test"
-	        }, {
-	            "key": "cloud/img/201512/ab1c145071ef03e90383ea5db4039e5d.png"
-	        },
-	        ["starts-with", "$name", ""],
-	    ]
-	}
+|{
+|    "expiration": "2015-12-02T10:57:30.000Z",
+|    "conditions": [{
+|            "acl": "public-read"
+|        }, {
+|            "bucket": "test"
+|        }, {
+|            "key": "cloud/img/201512/ab1c145071ef03e90383ea5db4039e5d.png"
+|        },
+|        ["starts-with", "$name", ""],
+|    ]
+|}
 
 2、 如何在初始化 ks3FileUploader 实例后更改acl, key, signature，policy等选项？
 
 答：
 
-	//tempUpload 为 ks3FileUploader 实例
-	tempUpload.uploader.setOption("multipart_params", {
-	                "key": your.key,
-	                "acl": your.acl,
-	                "signature" : your.signature,
-	                "KSSAccessKeyId": your.KSSAccessKeyId,
-	                "policy": your.policy
-	            }}
+|//tempUpload 为 ks3FileUploader 实例
+|tempUpload.uploader.setOption("multipart_params", {
+|                "key": your.key,
+|                "acl": your.acl,
+|                "signature" : your.signature,
+|                "KSSAccessKeyId": your.KSSAccessKeyId,
+|                "policy": your.policy
+|            }}
 
 3、 上传时返回403，该怎么办？
 
@@ -188,7 +188,7 @@ server.js为一个nodeJS web服务，启动后会监听本地的3000端口
 
 ### 许可协议 ###
 
-	www.gnu.org/licenses/gpl-2.0.html
-	
-	
+|www.gnu.org/licenses/gpl-2.0.html
+|
+|
 更多详细信息,请参阅[官方文档](http://ks3.ksyun.com/doc/api/index.html)

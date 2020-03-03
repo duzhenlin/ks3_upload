@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <ks3-upload :Signature="Signature"></ks3-upload>
+    <ks3-upload :Signature="Signature" :module="module" @uploadsucceed="uploadsucceed"></ks3-upload>
   </div>
 </template>
 
@@ -11,15 +11,22 @@ export default {
   components: { ks3Upload },
   data() {
     return {
+      module: "sucaiku",
       Signature: {
-        Policy: "",
-        Signature: "",
-        KSSAccessKeyId: "",
-        bucket: ""
+        Policy: "Policy",
+        Signature: "Signature",
+        KSSAccessKeyId: "KSSAccessKeyId",
+        bucket: "bucket",
+        domain: "domain",
+        region: "BEIJING"
       }
     };
   },
-  methods: {}
+  methods: {
+    uploadsucceed(obj, url) {
+      console.log(obj, url);
+    }
+  }
 };
 </script>
 

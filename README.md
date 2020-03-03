@@ -31,7 +31,7 @@ npm run dev
 ## Props
 prop              | descripton                   | type                   | value
 ------------------|------------------------------|:----------------------:|---------------------
-Signature         | 上传所用的签名等信息           | Object                 |`{Policy:"Policy",Signature:"Signature",KSSAccessKeyId:"KSSAccessKeyId",bucket:"bucket"}`
+Signature         | 上传所用的签名等信息           | Object                 |`{Policy:"Policy",Signature:"Signature",KSSAccessKeyId:"KSSAccessKeyId",bucket:"bucket",region:"region",domain:"domain"}`
 mime_types        | 允许上传的文件类型             | Array                | `[{title:"files ",extensions:"mp4,mov"}]`
 max_file_size     | 限制上传大小                   | String                | 3gb
 prevent_duplicates| 是否可以重复选用               | Boolean               | true
@@ -43,3 +43,19 @@ event             | descripton                  | arguments
 remove            | 当文件被删除                 | file
 uploadError       | 文件上传错误时候              | file
 uploadsucceed     | 成功时返回                   | file ，baseUrl
+
+## Region对应表格
+
+
+Region中文名称 |Region英文名称 |外网域名 |
+------------------|------------------------------|:----------------------:|
+中国（北京）|BEIJING|ks3-cn-beijing.ksyun.com
+中国（上海）|SHANGHAI|ks3-cn-shanghai.ksyun.com
+中国（广州）|GUANGZHOU|ks3-cn-guangzhou.ksyun.com
+中国（青岛）|QINGDAO|ks3-cn-qingdao.ksyun.com
+中国（香港）|HONGKONG|ks3-cn-hk-1.ksyun.com
+中国（杭州）|HANGZHOU|kss.ksyun.com
+金融专区（北京）|JR_BEIJING|ks3-jr-beijing.ksyun.com
+金融专区（上海）|JR_SHANGHAI|ks3-jr-shanghai.ksyun.com
+俄罗斯|RUSSIA|ks3-rus.ksyun.com
+新加坡|SINGAPORE|ks3-sgp.ksyun.com
