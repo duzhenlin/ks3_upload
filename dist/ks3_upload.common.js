@@ -227,7 +227,7 @@ module.exports = function (it, key) {
 /* harmony import */ var core_js_modules_es6_array_sort__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es6_array_sort__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var core_js_modules_es6_regexp_to_string__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("6b54");
 /* harmony import */ var core_js_modules_es6_regexp_to_string__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es6_regexp_to_string__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var D_obj_transcoding_ks3_upload_node_modules_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__("bd86");
+/* harmony import */ var D_obj_zhuanma_ks3_upload_node_modules_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__("bd86");
 
 
 
@@ -278,7 +278,7 @@ module.exports = function (it, key) {
     var multipartParams = {};
 
     if (this.defaultKS3Options.signature && this.defaultKS3Options.policy) {
-      multipartParams = Object(D_obj_transcoding_ks3_upload_node_modules_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])({
+      multipartParams = Object(D_obj_zhuanma_ks3_upload_node_modules_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])({
         "key": this.defaultKS3Options.key,
         "acl": this.defaultKS3Options.acl,
         "signature": this.defaultKS3Options.signature,
@@ -664,7 +664,9 @@ Ks3.ENDPOINT = {
   AMERICA: 'ks3-us-west-1.ksyun.com',
   BEIJING: 'ks3-cn-beijing.ksyun.com',
   HONGKONG: 'ks3-cn-hk-1.ksyun.com',
-  SHANGHAI: 'ks3-cn-shanghai.ksyun.com'
+  SHANGHAI: 'ks3-cn-shanghai.ksyun.com',
+  QINGDAO: 'ks3-cn-qingdao.ksyun.com',
+  GUANGZHOU: 'ks3-cn-guangzhou.ksyun.com'
 };
 Ks3.config = {
   AK: '',
@@ -14008,26 +14010,23 @@ module.exports = (
 "use strict";
 /* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var core_js_modules_es6_function_name__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("7f7f");
 /* harmony import */ var core_js_modules_es6_function_name__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es6_function_name__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var core_js_modules_es6_array_iterator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("cadf");
-/* harmony import */ var core_js_modules_es6_array_iterator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es6_array_iterator__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var core_js_modules_es6_object_keys__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("456d");
-/* harmony import */ var core_js_modules_es6_object_keys__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es6_object_keys__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var core_js_modules_web_dom_iterable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("ac6a");
-/* harmony import */ var core_js_modules_web_dom_iterable__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_iterable__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var core_js_modules_es6_array_find_index__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__("20d6");
-/* harmony import */ var core_js_modules_es6_array_find_index__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es6_array_find_index__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _assets_ks3_src_ks3jssdk__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__("07f4");
-/* harmony import */ var _assets_ks3_src_zh_CN__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__("a203");
-/* harmony import */ var _assets_ks3_src_zh_CN__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_assets_ks3_src_zh_CN__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__("8bbf");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__("60de");
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var core_js_modules_es6_object_keys__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("456d");
+/* harmony import */ var core_js_modules_es6_object_keys__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es6_object_keys__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var core_js_modules_web_dom_iterable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("ac6a");
+/* harmony import */ var core_js_modules_web_dom_iterable__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_iterable__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var core_js_modules_es6_array_find_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("20d6");
+/* harmony import */ var core_js_modules_es6_array_find_index__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es6_array_find_index__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _assets_ks3_src_ks3jssdk__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__("07f4");
+/* harmony import */ var _assets_ks3_src_zh_CN__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__("a203");
+/* harmony import */ var _assets_ks3_src_zh_CN__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_assets_ks3_src_zh_CN__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__("8bbf");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__("60de");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_7__);
 
 
 
 
-
 //
 //
 //
@@ -14062,11 +14061,15 @@ module.exports = (
 
 
 
-vue__WEBPACK_IMPORTED_MODULE_7___default.a.prototype.$ks3 = _assets_ks3_src_ks3jssdk__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"];
+vue__WEBPACK_IMPORTED_MODULE_6___default.a.prototype.$ks3 = _assets_ks3_src_ks3jssdk__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"];
 /* harmony default export */ __webpack_exports__["a"] = ({
   name: "Ks3Upload",
   components: {},
   props: {
+    module: {
+      type: String,
+      default: null
+    },
     Signature: {
       type: Object,
       default: function _default() {}
@@ -14089,14 +14092,11 @@ vue__WEBPACK_IMPORTED_MODULE_7___default.a.prototype.$ks3 = _assets_ks3_src_ks3j
     prevent_duplicates: {
       type: Boolean,
       default: true
-    },
-    region: {
-      type: String,
-      default: "BEIJING"
     }
   },
   data: function data() {
     return {
+      region: "BEIJING",
       fileList: [],
       getMd5: {},
       uploader: null,
@@ -14116,9 +14116,7 @@ vue__WEBPACK_IMPORTED_MODULE_7___default.a.prototype.$ks3 = _assets_ks3_src_ks3j
     };
   },
   beforeCreate: function beforeCreate() {},
-  created: function created() {// console.log(this.$ks3);
-    // console.log(this.$ks3.config);
-  },
+  created: function created() {},
   mounted: function mounted() {
     var _this = this;
 
@@ -14171,6 +14169,24 @@ vue__WEBPACK_IMPORTED_MODULE_7___default.a.prototype.$ks3 = _assets_ks3_src_ks3j
       if (build.length < str.length) build += "...";
       return build;
     },
+    fileType: function fileType(filename) {
+      var index = filename.lastIndexOf(".");
+      var ext = filename.substr(index + 1);
+      var type = "";
+      var typeMap = {
+        image: ["gif", "jpg", "jpeg", "png", "bmp", "webp"],
+        media: ["mp4", "m3u8", "rmvb", "avi", "swf", "3gp", "mkv", "flv", "wav", "mp3"],
+        text: ["doc", "txt", "docx", "pages", "epub", "pdf", "numbers", "csv", "xls", "xlsx", "keynote", "ppt", "pptx"]
+      };
+      Object.keys(typeMap).forEach(function (_type) {
+        var extensions = typeMap[_type];
+
+        if (extensions.indexOf(ext) > -1) {
+          type = _type;
+        }
+      });
+      return type ? type : "files";
+    },
     fileCategory: function fileCategory(filename) {
       var index = filename.lastIndexOf(".");
       var ext = filename.substr(index + 1);
@@ -14199,7 +14215,7 @@ vue__WEBPACK_IMPORTED_MODULE_7___default.a.prototype.$ks3 = _assets_ks3_src_ks3j
         protocol = "http";
       }
 
-      return protocol + "://" + this.$ks3.ENDPOINT[this.region] + "/" + this.Signature.bucket;
+      return protocol + "://" + this.$ks3.ENDPOINT[this.Signature.region ? this.Signature.region : this.region] + "/" + this.Signature.bucket;
     },
     startUpload: function startUpload() {
       this.uploader.uploader.start();
@@ -14216,9 +14232,28 @@ vue__WEBPACK_IMPORTED_MODULE_7___default.a.prototype.$ks3 = _assets_ks3_src_ks3j
 
       return pwd;
     },
-    upload_subdir: function upload_subdir() {
+    upload_subdir: function upload_subdir(obj) {
+      var moduleName = this.module ? this.module + "/" : "";
       var date = new Date();
-      return date.getFullYear() + "" + date.getMonth() + "/" + date.getDate() + "/";
+      return this.fileType(obj.name) + "/" + moduleName + date.getFullYear() + this.getMonth(date) + "/" + this.getDate(date) + "/";
+    },
+    getMonth: function getMonth(date) {
+      var m = date.getMonth() + 1;
+
+      if (m < 10) {
+        m = "0" + m;
+      }
+
+      return m;
+    },
+    getDate: function getDate(date) {
+      var m = date.getDate();
+
+      if (m < 10) {
+        m = "0" + m;
+      }
+
+      return m;
     },
     newFilenName: function newFilenName(filename) {
       var index = filename.lastIndexOf(".");
@@ -14236,8 +14271,6 @@ vue__WEBPACK_IMPORTED_MODULE_7___default.a.prototype.$ks3 = _assets_ks3_src_ks3j
         acl: "public-read",
         uploadDomain: this.ks3UploadUrl(),
         autoStart: false,
-        "x-kss-meta-custom-param1": "Hello",
-        "x-kss-newfilename-in-body": true,
         "Cache-Control": "max-age=600",
         //设置缓存多少秒后过期
         // Expires: new Date(getExpires(600) * 1000), //设置缓存过期时间
@@ -14251,7 +14284,12 @@ vue__WEBPACK_IMPORTED_MODULE_7___default.a.prototype.$ks3 = _assets_ks3_src_ks3j
         onFileUploadedCallBack: function onFileUploadedCallBack(uploader, obj) {
           $(".file-".concat(obj.id, " .progress")).css("background", "#f2f2f2");
           $(".file-".concat(obj.id, " .file-status")).html("上传成功");
-          my.$emit("uploadsucceed", obj, my.ks3UploadUrl());
+
+          if (my.Signature.domain) {
+            my.$emit("uploadsucceed", obj, my.Signature.domain + "/" + obj.name);
+          } else {
+            my.$emit("uploadsucceed", obj, my.ks3UploadUrl() + "/" + obj.name);
+          }
         },
         onFilesAddedCallBack: function onFilesAddedCallBack(uploader, objArray) {
           // my.fileList = objArray;
@@ -14266,14 +14304,13 @@ vue__WEBPACK_IMPORTED_MODULE_7___default.a.prototype.$ks3 = _assets_ks3_src_ks3j
         onBeforeUploadCallBack: function onBeforeUploadCallBack(uploader, obj) {
           //改名上传文件
           obj.oldname = obj.name;
-          var newObjectKey = my.upload_subdir() + my.newFilenName(obj.name);
+          var newObjectKey = my.upload_subdir(obj) + my.newFilenName(obj.name);
           uploader.settings.multipart_params["key"] = newObjectKey;
           obj.name = newObjectKey;
         },
         onErrorCallBack: function onErrorCallBack(uploader, errObject) {
           if (errObject.status === 413 || errObject.status === 415) {
-            var responseXML = this.$ks3.parseStringToXML(errObject.response); // alert(Ks3.xmlToJson(responseXML)["Error"]["Message"]);
-
+            var responseXML = this.$ks3.parseStringToXML(errObject.response);
             my.$Notice.error({
               title: this.$ks3.xmlToJson(responseXML)["Error"]["Message"]
             });
@@ -14443,12 +14480,12 @@ if (typeof window !== 'undefined') {
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
 var es6_function_name = __webpack_require__("7f7f");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"889799a4-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/ks3_upload/ks3_upload.vue?vue&type=template&id=b091f6de&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"3e536d0c-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/ks3_upload/ks3_upload.vue?vue&type=template&id=44712314&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('div',{attrs:{"id":"container"}},[_c('Button',{attrs:{"id":"browse","type":"primary"}},[_vm._v("选择文件")]),_c('Button',{attrs:{"id":"start-upload","type":"primary"},on:{"click":_vm.startUpload}},[_vm._v("开始上传")])],1),_c('div',{staticClass:"file-panel"},[_c('h2',[_vm._v("文件列表")]),_c('div',{staticClass:"file-list"},[_vm._l((_vm.fileList),function(file){return _c('ul',{key:file.id,staticClass:"file-item",class:("file-" + (file.id))},[_c('li',{staticClass:"file-type",attrs:{"icon":_vm.fileCategory(file.name)}}),_c('li',{staticClass:"file-name"},[_vm._v(_vm._s(_vm.Cutsubstr(file.oldname,30)))]),_c('li',{staticClass:"file-size"},[_vm._v(_vm._s(_vm.fileSize(file.origSize)))]),_c('li',{staticClass:"file-status"},[_vm._v("等待上传...")]),_c('li',{staticClass:"file-operate"},[_c('a',{attrs:{"title":"移除"},on:{"click":function($event){return _vm.remove(file)}}},[_c('Icon',{attrs:{"type":"md-close"}})],1)]),_c('li',{staticClass:"progress"})])}),(!_vm.fileList.length)?_c('div',{staticClass:"no-file"},[_c('i',{staticClass:"iconfont icon-empty-file"}),_vm._v(" 暂无待上传文件\n      ")]):_vm._e()],2)])])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/ks3_upload/ks3_upload.vue?vue&type=template&id=b091f6de&
+// CONCATENATED MODULE: ./src/components/ks3_upload/ks3_upload.vue?vue&type=template&id=44712314&
 
 // EXTERNAL MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/ks3_upload/ks3_upload.vue?vue&type=script&lang=js&
 var ks3_uploadvue_type_script_lang_js_ = __webpack_require__("e211");
