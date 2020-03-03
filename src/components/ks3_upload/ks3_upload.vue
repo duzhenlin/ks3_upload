@@ -170,7 +170,7 @@ export default {
           type = _type;
         }
       });
-      return type ? type : "other";
+      return type ? type : "files";
     },
     fileCategory(filename) {
       let index = filename.lastIndexOf(".");

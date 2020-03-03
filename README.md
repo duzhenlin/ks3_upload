@@ -36,6 +36,18 @@ mime_types        | 允许上传的文件类型             | Array             
 max_file_size     | 限制上传大小                   | String                | 3gb
 prevent_duplicates| 是否可以重复选用               | Boolean               | true
 region            | 可用区                        | String                | BEIJING
+module            | 模块名称（可不填）               | String               | core
+
+
+## UrlPath
+####类型
+| 图片  | 视频,音频  | 其他类型|
+| ------------ | ------------ |
+|  image |  media |  files |
+
+####生成文件路径模板
+
+/类型/模块名称(不填可省略)/YYYYMM/DD/文件名(暂用32位随机字符串)
 
 ## Events
 event             | descripton                  | arguments
