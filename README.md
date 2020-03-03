@@ -35,7 +35,6 @@ Signature         | 上传所用的签名等信息           | Object           
 mime_types        | 允许上传的文件类型             | Array                | `[{title:"files ",extensions:"mp4,mov"}]`
 max_file_size     | 限制上传大小                   | String                | 3gb
 prevent_duplicates| 是否可以重复选用               | Boolean               | true
-region            | 可用区                        | String                | BEIJING
 module            | 模块名称（可不填）               | String               | core
 
 
@@ -69,7 +68,3 @@ Region中文名称 |Region英文名称 |外网域名 |
 中国（青岛）|QINGDAO|ks3-cn-qingdao.ksyun.com
 中国（香港）|HONGKONG|ks3-cn-hk-1.ksyun.com
 中国（杭州）|HANGZHOU|kss.ksyun.com
-金融专区（北京）|JR_BEIJING|ks3-jr-beijing.ksyun.com
-金融专区（上海）|JR_SHANGHAI|ks3-jr-shanghai.ksyun.com
-俄罗斯|RUSSIA|ks3-rus.ksyun.com
-新加坡|SINGAPORE|ks3-sgp.ksyun.com
